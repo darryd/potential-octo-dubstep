@@ -1,6 +1,6 @@
 
 
-function chart_new(point) {
+function chart_new() {
 
   var chart = {};
 

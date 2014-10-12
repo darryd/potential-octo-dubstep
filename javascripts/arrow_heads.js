@@ -27,6 +27,16 @@ function arrow_head_new (origin, dest) {
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------*/
+
+function arrow_head_new_and_draw(origin, dest, canvas) {
+
+  arrow_head = arrow_head_new(origin, dest);
+  arrow_head_draw(arrow_head, canvas);
+
+  return arrow_head;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------*/
 function draw_line (p1, p2, canvas, color) {
 
    var ctx = canvas.getContext("2d");

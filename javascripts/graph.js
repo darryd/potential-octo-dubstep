@@ -1,26 +1,26 @@
 
 /*----------------------------------------------------------------------------------------------------------------------------------*/
-function chart_new() {
+function graph_new() {
 
-  var chart = {};
-  chart.nodes = [];
+  var graph = {};
+  graph.nodes = [];
 
-  return chart;
+  return graph;
 } 
 
 /*----------------------------------------------------------------------------------------------------------------------------------*/
-function chart_draw(chart, canvas) {
+function graph_draw(graph, canvas) {
 
-  for (i=0; i<chart.nodes.length; i++) {
-     node_draw(chart.nodes[i], canvas);
+  for (i=0; i<graph.nodes.length; i++) {
+     node_draw(graph.nodes[i], canvas);
   }
 
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------*/
-function chart_add_node (chart, node) {
+function graph_add_node (graph, node) {
 
-  chart.nodes.push(node);
+  graph.nodes.push(node);
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------*/

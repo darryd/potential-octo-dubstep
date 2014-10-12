@@ -11,7 +11,7 @@ function graph_new() {
 /*----------------------------------------------------------------------------------------------------------------------------------*/
 function graph_draw(graph, canvas) {
 
-  for (i=0; i<graph.nodes.length; i++) {
+  for (var i=0; i<graph.nodes.length; i++) {
      node_draw(graph.nodes[i], canvas);
   }
 

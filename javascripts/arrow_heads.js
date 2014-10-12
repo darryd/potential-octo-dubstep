@@ -30,7 +30,7 @@ function arrow_head_new (origin, dest) {
 
 function arrow_head_new_and_draw(origin, dest, canvas) {
 
-  arrow_head = arrow_head_new(origin, dest);
+  var arrow_head = arrow_head_new(origin, dest);
   arrow_head_draw(arrow_head, canvas);
 
   return arrow_head;

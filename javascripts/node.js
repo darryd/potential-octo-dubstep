@@ -10,7 +10,31 @@ function node_new (x, y, id) {
   node.id = id;
   node.color = "black";
   node.radius = 20;
-  node.edges = [];
+  node.edges = {};  // edges indexed by nodes eg. node.edge[nodeA]
+
+
+  node.toString = function() {return "id="+this.id+"x="+x+"y="+y+"radius="+this.radius;}; // This is to make the hashes work corectly
+
+  node.add_edge = function (nodeB, weight) {
+
+    if (this.edges[nodeB] == undefined ) {
+        
+      var edge = edge_new(this, nodeB, weight, false, true);
+
+      this.edges[nodeB] = edge;
+      nodeB.edges[this] = edge;
+    } 
+
+    else {
+
+      var edge = this.edges[nodeB];
+
+      if (edge.node1 == this)
+	edge.is_dir_node1 = true;
+      else
+	edge.is_dir_node2 = true;
+    }
+  };
 
   return node;
 }
@@ -27,10 +51,11 @@ function node_draw (node, canvas) {
 }
 
 /*---------------------------------------------------------------------------------------------------------------------*/
+/*
 function node_add_edge(nodeA, nodeB, weight) {
     
   edge = edge_new(nodeA, nodeB, weight);
   nodeA.edges.push(edge);
 }
-
+*/
 /*---------------------------------------------------------------------------------------------------------------------*/

@@ -29,7 +29,6 @@ function node_new (x, y, id) {
 
       var edge = this.edges[nodeB];
 
-      // TODO: I'm going to imporove this bit here...
       if (edge.node1 == this)
 	edge.is_dir_node1 = true;
       else

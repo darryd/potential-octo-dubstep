@@ -13,7 +13,7 @@ function node_new (x, y, id) {
   node.edges = {};  // edges indexed by nodes eg. node.edge[nodeA]
 
 
-  node.toString = function() {return "id="+this.id+"x="+x+"y="+y+"radius="+this.radius;}; // This is to make the hashes work corectly
+  node.toString = function() {return "id="+this.id+"x="+x+"y="+y+"radius="+this.radius;}; // This is to make the hashes work correctly
 
   node.add_edge = function (nodeB, weight) {
 
@@ -29,6 +29,7 @@ function node_new (x, y, id) {
 
       var edge = this.edges[nodeB];
 
+      // TODO: I'm going to imporove this bit here...
       if (edge.node1 == this)
 	edge.is_dir_node1 = true;
       else

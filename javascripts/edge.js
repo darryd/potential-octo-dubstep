@@ -19,9 +19,7 @@ function edge_new (node1, node2, weight, is_dir_node1, is_dir_node2) {
 /*----------------------------------------------------------------------------------------------------------------------------------*/
 function edge_draw(edge, canvas) {
 
- // TODO: I'm going to make it so the lines don't get drawn into the circles of the nodes 
- 
-
+  // Get the point of the line where it intercepts with the cirlce.
   var rad1 = getRadiansToPoint2(edge.node1, edge.node2);
   var point1 = getXY(edge.node1, rad1);
 

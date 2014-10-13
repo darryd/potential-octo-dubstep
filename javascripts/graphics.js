@@ -87,20 +87,6 @@ function getRadiansToPoint2 (p1, p2) {
 
   return getRadiansBetweenPoints(p1.x, p1.y, p2.x, p2.y); 
 }
-
-/*----------------------------------------------------------------------------------------------------------------------------------*/
-
-function getXY(node, radians) {
-
-  var x = node.radius * Math.cos(radians);
-  var y = node.radius * Math.sin(radians);
-
-  x += node.x;
-  y += node.y;
-
-  return {x: x, y: y}
-}
-
 /*----------------------------------------------------------------------------------------------------------------------------------*/
 function getRadiansBetweenPoints(x1, y1, x2, y2) {
 

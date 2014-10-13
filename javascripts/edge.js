@@ -16,6 +16,21 @@ function edge_new (node1, node2, weight, is_dir_node1, is_dir_node2) {
   return edge;
 }
 
+
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+// Returns the point on the circle that a line from the centre of the circle with angle 'radians' intercepts.
+
+function getXY(node, radians) {
+
+  var x = node.radius * Math.cos(radians);
+  var y = node.radius * Math.sin(radians);
+
+  x += node.x;
+  y += node.y;
+
+  return {x: x, y: y}
+}
+
 /*----------------------------------------------------------------------------------------------------------------------------------*/
 function edge_draw(edge, canvas) {
 
@@ -39,6 +54,8 @@ function edge_draw(edge, canvas) {
 
 function my_test() {
    
+
+
   canvas = document.getElementById("demo_canvas");
 
   node1 = node_new(100, 100);
@@ -49,5 +66,26 @@ function my_test() {
   node_draw(node2, canvas);
 
   edge_draw(edge, canvas);
+
+
+  node3 = node_new(50, 150);
+  node4 = node_new(50, 290);
+
+  edge2 = edge_new(node3, node4, 1, true, true);
+  node_draw(node3, canvas);
+  node_draw(node4, canvas);
+
+  edge_draw(edge2, canvas);
+
+  edge3 = edge_new(node1, node3, 1, false, true);
+  edge4 = edge_new(node4, node2, 1, true, false);
+  edge5 = edge_new(node4, node1, 1, false, true);
+
+  edge_draw(edge3, canvas);
+  edge_draw(edge4, canvas);
+  edge_draw(edge5, canvas);
+
+
+
 }
 

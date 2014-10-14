@@ -58,8 +58,8 @@ function my_test() {
 
   canvas = document.getElementById("demo_canvas");
 
-  node1 = node_new(100, 100);
-  node2 = node_new(200, 200);
+  node1 = node_new(100, 100, 1);
+  node2 = node_new(200, 200, 2);
   edge = edge_new(node1, node2, 1, false, true);
 
   node_draw(node1, canvas);
@@ -68,8 +68,8 @@ function my_test() {
   edge_draw(edge, canvas);
 
 
-  node3 = node_new(50, 150);
-  node4 = node_new(50, 290);
+  node3 = node_new(50, 150, 3);
+  node4 = node_new(50, 290, 4);
 
   edge2 = edge_new(node3, node4, 1, true, true);
   node_draw(node3, canvas);

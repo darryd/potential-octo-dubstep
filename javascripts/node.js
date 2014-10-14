@@ -28,8 +28,8 @@ function node_new (x, y, id) {
     else {
 
       var edge = this.edges[nodeB];
-
-      if (edge.node1 == this)
+      
+      if (edge.node1 == nodeB)
 	edge.is_dir_node1 = true;
       else
 	edge.is_dir_node2 = true;

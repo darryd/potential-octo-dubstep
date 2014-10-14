@@ -12,7 +12,7 @@ function edge_new (node1, node2, weight, is_dir_node1, is_dir_node2) {
   edge.is_dir_node2 = is_dir_node2; // True if there's an arrow head at node2
 
   // Get the node on the other side of the edge.
-  // Precondition: 'node' is one nodes in the edge.
+  // Precondition: 'node' is one of the nodes in the edge.
   
   edge.get_other_node = function (node) {
      
@@ -22,8 +22,8 @@ function edge_new (node1, node2, weight, is_dir_node1, is_dir_node2) {
       return this.node2;
   };
 
-  // Returns wheter 'node' can go to the other side of the edge.
-  // Precondition: 'node' is one nodes in the edge.
+  // Returns whether 'node' can go to the other side of the edge.
+  // Precondition: 'node' is one of the nodes in the edge.
   edge.can_go_to_other_side = function (node) {   
  
     if (node != this.node1)

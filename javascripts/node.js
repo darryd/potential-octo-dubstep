@@ -21,7 +21,7 @@ function node_new (x, y, id) {
 
     if (this.edges[nodeB] == undefined ) {
         
-      edge = edge_new(this, nodeB, weight, false, true);
+      edge = edge_new(this, nodeB, weight, 0);
 
       this.edges[nodeB] = edge;
       nodeB.edges[this] = edge;
@@ -30,11 +30,9 @@ function node_new (x, y, id) {
     else {
 
       edge = this.edges[nodeB];
+
+      edge.nodes[this].weight = weight;
       
-      if (edge.node1 == nodeB)
-	edge.is_dir_node1 = true;
-      else
-	edge.is_dir_node2 = true;
     }
     return edge;
   };

@@ -14,12 +14,16 @@
 
     for (var i=0; i < graph.nodes.length; i++) {
 
-      var x_dist = Math.floor(Math.random() * range * 2);
-      var y_dist = Math.floor(Math.random() * range * 2);
+      var x_dist = Math.floor(Math.random() * range);
+      var y_dist = Math.floor(Math.random() * range);
 
-      x_dist -= range;
-      y_dist -= range;
       
+      if ( (Math.floor(Math.random() * 100) % 2) == 0 )
+         x_dist *= -1;
+
+      if ( (Math.floor(Math.random() * 100) % 2) == 0 )
+         y_dist *= -1;
+
       graph.nodes[i].x += x_dist;
       graph.nodes[i].y += y_dist;
 
@@ -41,7 +45,7 @@
     n4.add_edge(n5, 1);
 
     graph.draw();
-    setInterval(function(){ move_around(graph, 15);}, 300)
+    setInterval(function(){ move_around(graph, 6);}, 70)
 
 </script>
 

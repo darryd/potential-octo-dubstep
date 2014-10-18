@@ -18,6 +18,9 @@ function graph_new(canvas) {
 
   graph.draw = function () {
 
+    var ctx = this.canvas.getContext("2d")
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+
     for (var i=0; i < this.nodes.length; i++) {
        node_draw(this.nodes[i], canvas);
     }

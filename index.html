@@ -31,6 +31,8 @@
      graph.draw();
    }
 
+   function init_graph() { 
+
     graph = graph_new(document.getElementById("demo_canvas"));
 
     n1 = graph.new_node(100, 400, 1);
@@ -45,7 +47,11 @@
     n4.add_edge(n5, 1);
 
     graph.draw();
+  }
+
+    init_graph();
     setInterval(function(){ move_around(graph, 2);}, 1)
+    setInterval(function(){ init_graph();}, 100)
 
 </script>
 

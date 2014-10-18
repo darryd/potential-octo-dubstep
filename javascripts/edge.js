@@ -50,9 +50,9 @@ function edge_draw(edge, canvas) {
   draw_line(point1, point2, canvas, edge.color);
 
   if (edge.nodes[1].weight != 0)
-    arrow_head_new_and_draw(point2, point1, canvas);
-  if (edge.nodes[2].weight != 0)
     arrow_head_new_and_draw(point1, point2, canvas);
+  if (edge.nodes[2].weight != 0)
+    arrow_head_new_and_draw(point2, point1, canvas);
   
 }
 

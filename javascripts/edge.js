@@ -2,9 +2,9 @@
 
 /*----------------------------------------------------------------------------------------------------------------------------------*/
 
-function node_data_new(opposite_node, weight, is_drawer) {
+function node_data_new(opposite_node, weight) {
 
-  return { opposite_node: opposite_node, weight: weight, is_drawer: is_drawer };
+  return { opposite_node: opposite_node, weight: weight };
 
 }
 
@@ -18,8 +18,8 @@ function edge_new (node1, node2, weight1, weight2) {
 
   edge.nodes = {};
 
-  edge.nodes[1] = edge.nodes[node1] = node_data_new(node2, weight1, true);
-  edge.nodes[2] = edge.nodes[node2] = node_data_new(node1, weight2, false);
+  edge.nodes[1] = edge.nodes[node1] = node_data_new(node2, weight1);
+  edge.nodes[2] = edge.nodes[node2] = node_data_new(node1, weight2);
 
   edge.color = "blue";
 

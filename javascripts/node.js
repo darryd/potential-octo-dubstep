@@ -1,13 +1,14 @@
 
 /*---------------------------------------------------------------------------------------------------------------------*/
 
-function node_new (x, y, id) {
+function node_new (x, y, id, graph) {
 
   var node = {};
 
   node.x = x;
   node.y = y;
   node.id = id;
+  node.graph = graph;
   node.color = "black";
   node.radius = 20;
   node.edges = {};  // edges indexed by nodes eg. node.edge[nodeA]
@@ -25,6 +26,8 @@ function node_new (x, y, id) {
 
       this.edges[nodeB] = edge;
       nodeB.edges[this] = edge;
+
+      this.graph.edges.push(edge);
     } 
 
     else {
@@ -51,12 +54,4 @@ function node_draw (node, canvas) {
     ctx.stroke();
 }
 
-/*---------------------------------------------------------------------------------------------------------------------*/
-/*
-function node_add_edge(nodeA, nodeB, weight) {
-    
-  edge = edge_new(nodeA, nodeB, weight);
-  nodeA.edges.push(edge);
-}
-*/
 /*---------------------------------------------------------------------------------------------------------------------*/

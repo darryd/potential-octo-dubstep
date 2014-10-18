@@ -9,6 +9,24 @@
 
 <script> 
 
+  function move_around(graph, range) {
+
+
+    for (var i=0; i < graph.nodes.length; i++) {
+
+      var x_dist = Math.floor(Math.random() * range * 2);
+      var y_dist = Math.floor(Math.random() * range * 2);
+
+      x_dist -= range;
+      y_dist -= range;
+      
+      graph.nodes[i].x += x_dist;
+      graph.nodes[i].y += y_dist;
+
+     }
+     graph.draw();
+   }
+
     graph = graph_new(document.getElementById("demo_canvas"));
 
     n1 = graph.new_node(100, 400, 1);
@@ -22,9 +40,8 @@
     n3.add_edge(n4, 1);
     n4.add_edge(n5, 1);
 
-
-
     graph.draw();
+    setInterval(function(){ move_around(graph, 15);}, 300)
 
 </script>
 

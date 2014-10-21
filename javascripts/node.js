@@ -47,8 +47,8 @@ function node_new (x, y, id, graph) {
         if (this.edges.hasOwnProperty(key_node)) {
 
           var edge = this.edges[key_node];
+	  var opposite_node = edge.nodes[key_node].node; 
 
-	  opposite_node = edge.nodes[key_node].node; 
           delete opposite_node.edges[this];
 	  delete this.edges[key_node];
 

@@ -41,6 +41,15 @@ function node_new (x, y, id, graph) {
     return edge;
   };
   /*---------------------------------------------------------------------------------------------------------------------*/
+
+  node.add_bi_edge = function (nodeB, weight1, weight2) {
+
+    this.add_edge(nodeB, weight1);
+    nodeB.add_edge(this, weight2);
+
+  };
+
+  /*---------------------------------------------------------------------------------------------------------------------*/
   node.remove_edges = function () {
 
     for (var key_node in this.edges) {

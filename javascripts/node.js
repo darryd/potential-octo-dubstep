@@ -14,8 +14,10 @@ function node_new (x, y, id, graph) {
   node.edges = {};  // edges indexed by nodes eg. node.edge[nodeA]
 
 
+  /*---------------------------------------------------------------------------------------------------------------------*/
   node.toString = function() {return "id="+this.id+"x="+x+"y="+y+"radius="+this.radius;}; // This is to make the hashes work correctly
 
+  /*---------------------------------------------------------------------------------------------------------------------*/
   node.add_edge = function (nodeB, weight) {
 
     var edge; 
@@ -33,12 +35,30 @@ function node_new (x, y, id, graph) {
     else {
 
       edge = this.edges[nodeB];
-
       edge.nodes[this].weight = weight;
       
     }
     return edge;
   };
+  /*---------------------------------------------------------------------------------------------------------------------*/
+  node.remove_edges = function () {
+
+    for (var key_node in this.edges) {
+        if (this.edges.hasOwnProperty(key_node)) {
+
+          var edge = this.edges[key_node];
+
+	  opposite_node = edge.nodes[key_node].node; 
+          delete opposite_node.edges[this];
+	  delete this.edges[key_node];
+
+	  this.graph.edge_is_removed(edge);
+	}
+    }
+
+  }
+
+  /*---------------------------------------------------------------------------------------------------------------------*/
 
   return node;
 }

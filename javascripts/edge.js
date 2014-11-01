@@ -38,21 +38,34 @@ function getXY(node, radians) {
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------*/
-function edge_draw(edge, canvas) {
+
+function get_arrow_end_points(edge) {
+
+  var points = {};
 
   // Get the point of the line where it intercepts with the cirlce.
   var rad1 = getRadiansToPoint2(edge.node1, edge.node2);
-  var point1 = getXY(edge.node1, rad1);
+  points.point1 = getXY(edge.node1, rad1);
 
   var rad2 = getRadiansToPoint2(edge.node2, edge.node1);
-  var point2 = getXY(edge.node2, rad2);
+  points.point2 = getXY(edge.node2, rad2);
 
-  draw_line(point1, point2, canvas, edge.color);
+  return points;
+}
+
+
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+function edge_draw(edge, canvas) {
+
+  // Get the point of the line where it intercepts with the cirlce.
+  points = get_arrow_end_points(edge)
+
+  draw_line(points.point1, points.point2, canvas, edge.color);
 
   if (edge.nodes[1].weight != 0)
-    arrow_head_new_and_draw(point1, point2, canvas);
+    arrow_head_new_and_draw(points.point1, points.point2, canvas);
   if (edge.nodes[2].weight != 0)
-    arrow_head_new_and_draw(point2, point1, canvas);
+    arrow_head_new_and_draw(points.point2, points.point1, canvas);
   
 }
 

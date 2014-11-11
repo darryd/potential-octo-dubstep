@@ -1,0 +1,58 @@
+
+<script src="javascripts/graphics.js"></script>
+<script src="javascripts/arrow_heads.js"></script>
+<script src="javascripts/edge.js"></script>
+<script src="javascripts/graph.js"></script>
+<script src="javascripts/node.js"></script>
+
+<canvas id="demo_canvas" width="2000" height="1000"></canvas>
+
+<script> 
+
+  function move_around(graph, range) {
+
+
+    for (var i=0; i < graph.nodes.length; i++) {
+
+      var x_dist = Math.floor(Math.random() * range);
+      var y_dist = Math.floor(Math.random() * range);
+
+      
+      if ( (Math.floor(Math.random() * 100) % 2) == 0 )
+         x_dist *= -1;
+
+      if ( (Math.floor(Math.random() * 100) % 2) == 0 )
+         y_dist *= -1;
+
+      graph.nodes[i].x += x_dist;
+      graph.nodes[i].y += y_dist;
+
+     }
+     graph.draw();
+   }
+
+   function init_graph() { 
+
+    graph = graph_new(document.getElementById("demo_canvas"));
+
+    n1 = graph.new_node(100, 400, 1);
+    n2 = graph.new_node(200, 300, 1);
+    n3 = graph.new_node(300, 200, 1);
+    n4 = graph.new_node(400, 300, 1);
+    n5 = graph.new_node(500, 400, 1);
+
+    n1.add_edge(n2, 1);
+    n2.add_edge(n3, 1);
+    n3.add_edge(n4, 1);
+    n4.add_edge(n5, 1);
+
+    graph.draw();
+  }
+
+    init_graph();
+    setInterval(function(){ move_around(graph, 2);}, 1)
+    setInterval(function(){ init_graph();}, 100)
+
+</script>
+
+

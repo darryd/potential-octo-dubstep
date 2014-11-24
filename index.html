@@ -1,58 +1,77 @@
-
-<script src="javascripts/graphics.js"></script>
-<script src="javascripts/arrow_heads.js"></script>
-<script src="javascripts/edge.js"></script>
-<script src="javascripts/graph.js"></script>
-<script src="javascripts/node.js"></script>
-
-<canvas id="demo_canvas" width="2000" height="1000"></canvas>
-
-<script> 
-
-  function move_around(graph, range) {
-
-
-    for (var i=0; i < graph.nodes.length; i++) {
-
-      var x_dist = Math.floor(Math.random() * range);
-      var y_dist = Math.floor(Math.random() * range);
-
-      
-      if ( (Math.floor(Math.random() * 100) % 2) == 0 )
-         x_dist *= -1;
-
-      if ( (Math.floor(Math.random() * 100) % 2) == 0 )
-         y_dist *= -1;
-
-      graph.nodes[i].x += x_dist;
-      graph.nodes[i].y += y_dist;
-
-     }
-     graph.draw();
-   }
-
-   function init_graph() { 
-
-    graph = graph_new(document.getElementById("demo_canvas"));
-
-    n1 = graph.new_node(100, 400, 1);
-    n2 = graph.new_node(200, 300, 1);
-    n3 = graph.new_node(300, 200, 1);
-    n4 = graph.new_node(400, 300, 1);
-    n5 = graph.new_node(500, 400, 1);
-
-    n1.add_edge(n2, 1);
-    n2.add_edge(n3, 1);
-    n3.add_edge(n4, 1);
-    n4.add_edge(n5, 1);
-
-    graph.draw();
-  }
-
-    init_graph();
-    setInterval(function(){ move_around(graph, 2);}, 1)
-    setInterval(function(){ init_graph();}, 100)
-
-</script>
-
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Flat UI Pro</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Loading Bootstrap -->
+        <link href="flatui/css/vendor/bootstrap.min.css" rel="stylesheet">
+        <!-- Loading Flat UI -->
+        <link href="flatui/css/flat-ui.css" rel="stylesheet">
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+        <!--[if lt IE 9]>
+<script src="../../dist/js/vendor/html5shiv.js"></script>
+<script src="../../dist/js/vendor/respond.min.js"></script>
+<![endif]-->
+    </head>
+    <body>
+        <div class="container">
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-5">
+                        <span class="sr-only">Toggle navigation</span>
+                    </button>
+                    <a class="navbar-brand" href="#">Flat UI</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-collapse-5">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Messages<span class="navbar-new">10</span></a></li>
+                        <li class="active"><a href="#">About Us</a></li>
+                        <li><a href="#">Clients</a></li>
+                    </ul>
+                    <form class="navbar-form navbar-left" action="#" role="search">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input class="form-control" id="navbarInput-01" type="search" placeholder="Search">
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn"><span class="fui-search"></span></button>
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+                </div><!-- /.navbar-collapse -->
+            </nav>
+        </div>
+        <div class="container" style="margin-top:75px">
+            <div class="row">
+                <div class="col-md-3">
+                    <h1>Controls</h1>
+                    <p>
+                        What kind of controls should we have here
+                    </p>
+                </div>
+                <div id="canvasDiv" class="col-md-6">
+                    <h1 align="center">Canvas</h1>
+                    <p>
+                        test
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <h1>Steps</h1>
+                    <p>
+                        test
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="flatui/js/vendor/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="flatui/js/flat-ui.js"></script>
+        <script src="flatui/docs/assets/js/application.js"></script>
+    </body>
+</html>
 

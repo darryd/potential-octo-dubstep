@@ -1,0 +1,103 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 verbose node symlink /usr/bin/node
+5 warn package.json potential-octo-dubstep@1.0.0 No repository field.
+6 verbose readDependencies using package.json deps
+7 verbose install where, deps [ '/home/callum/Desktop/potential-octo-dubstep',
+7 verbose install   [ 'jquery',
+7 verbose install     'coffee-script',
+7 verbose install     'coffeeify',
+7 verbose install     'del',
+7 verbose install     'fs.extra',
+7 verbose install     'gulp',
+7 verbose install     'gulp-browserify',
+7 verbose install     'gulp-clean',
+7 verbose install     'gulp-coffee',
+7 verbose install     'gulp-ejs',
+7 verbose install     'gulp-rename',
+7 verbose install     'gulp-sass',
+7 verbose install     'gulp-util',
+7 verbose install     'node-sass',
+7 verbose install     'run-command',
+7 verbose install     'run-sequence' ] ]
+8 info preinstall potential-octo-dubstep@1.0.0
+9 verbose readDependencies using package.json deps
+10 verbose already installed skipping jquery@^2.1.1 /home/callum/Desktop/potential-octo-dubstep
+11 verbose already installed skipping coffee-script@^1.7.1 /home/callum/Desktop/potential-octo-dubstep
+12 verbose already installed skipping coffeeify@^0.6.0 /home/callum/Desktop/potential-octo-dubstep
+13 verbose already installed skipping del@^0.1.1 /home/callum/Desktop/potential-octo-dubstep
+14 verbose already installed skipping fs.extra@^1.2.1 /home/callum/Desktop/potential-octo-dubstep
+15 verbose already installed skipping gulp@^3.8.6 /home/callum/Desktop/potential-octo-dubstep
+16 verbose already installed skipping gulp-browserify@^0.5.0 /home/callum/Desktop/potential-octo-dubstep
+17 verbose already installed skipping gulp-clean@^0.3.0 /home/callum/Desktop/potential-octo-dubstep
+18 verbose already installed skipping gulp-coffee@^1.4.3 /home/callum/Desktop/potential-octo-dubstep
+19 verbose already installed skipping gulp-ejs@^0.2.2 /home/callum/Desktop/potential-octo-dubstep
+20 verbose already installed skipping gulp-rename@^1.2.0 /home/callum/Desktop/potential-octo-dubstep
+21 verbose already installed skipping gulp-sass@^0.7.2 /home/callum/Desktop/potential-octo-dubstep
+22 verbose already installed skipping gulp-util@^3.0.0 /home/callum/Desktop/potential-octo-dubstep
+23 verbose already installed skipping node-sass@^0.9.3 /home/callum/Desktop/potential-octo-dubstep
+24 verbose already installed skipping run-command@^0.2.3 /home/callum/Desktop/potential-octo-dubstep
+25 verbose already installed skipping run-sequence@^0.3.6 /home/callum/Desktop/potential-octo-dubstep
+26 silly resolved []
+27 info build /home/callum/Desktop/potential-octo-dubstep
+28 verbose linkStuff [ false, false, false, '/home/callum/Desktop' ]
+29 info linkStuff potential-octo-dubstep@1.0.0
+30 verbose linkBins potential-octo-dubstep@1.0.0
+31 verbose linkMans potential-octo-dubstep@1.0.0
+32 verbose rebuildBundles potential-octo-dubstep@1.0.0
+33 verbose rebuildBundles [ '.bin',
+33 verbose rebuildBundles   'coffee-script',
+33 verbose rebuildBundles   'coffeeify',
+33 verbose rebuildBundles   'del',
+33 verbose rebuildBundles   'fs.extra',
+33 verbose rebuildBundles   'gulp',
+33 verbose rebuildBundles   'gulp-browserify',
+33 verbose rebuildBundles   'gulp-clean',
+33 verbose rebuildBundles   'gulp-coffee',
+33 verbose rebuildBundles   'gulp-ejs',
+33 verbose rebuildBundles   'gulp-rename',
+33 verbose rebuildBundles   'gulp-sass',
+33 verbose rebuildBundles   'gulp-util',
+33 verbose rebuildBundles   'jquery',
+33 verbose rebuildBundles   'node-sass',
+33 verbose rebuildBundles   'nodewebkit',
+33 verbose rebuildBundles   'run-command',
+33 verbose rebuildBundles   'run-sequence' ]
+34 verbose rebuild bundle /home/callum/Desktop/potential-octo-dubstep/node_modules/nodewebkit
+35 info build /home/callum/Desktop/potential-octo-dubstep/node_modules/nodewebkit
+36 info preinstall nodewebkit@0.8.6
+37 verbose linkStuff [ false,
+37 verbose linkStuff   false,
+37 verbose linkStuff   false,
+37 verbose linkStuff   '/home/callum/Desktop/potential-octo-dubstep/node_modules' ]
+38 info linkStuff nodewebkit@0.8.6
+39 verbose linkBins nodewebkit@0.8.6
+40 verbose link bins [ { nodewebkit: 'bin/nodewebkit' },
+40 verbose link bins   '/home/callum/Desktop/potential-octo-dubstep/node_modules/.bin',
+40 verbose link bins   false ]
+41 verbose linkMans nodewebkit@0.8.6
+42 verbose rebuildBundles nodewebkit@0.8.6
+43 verbose rebuildBundles [ '.bin', 'download', 'multimeter', 'rimraf', 'yargs' ]
+44 info install nodewebkit@0.8.6
+45 info postinstall nodewebkit@0.8.6
+46 verbose unsafe-perm in lifecycle true
+47 info nodewebkit@0.8.6 Failed to exec postinstall script
+48 error nodewebkit@0.8.6 postinstall: `node scripts/install.js`
+48 error Exit status 8
+49 error Failed at the nodewebkit@0.8.6 postinstall script.
+49 error This is most likely a problem with the nodewebkit package,
+49 error not with npm itself.
+49 error Tell the author that this fails on your system:
+49 error     node scripts/install.js
+49 error You can get their info via:
+49 error     npm owner ls nodewebkit
+49 error There is likely additional logging output above.
+50 error System Linux 3.13.0-24-generic
+51 error command "/usr/bin/node" "/usr/bin/npm" "install"
+52 error cwd /home/callum/Desktop/potential-octo-dubstep
+53 error node -v v0.10.32
+54 error npm -v 1.4.28
+55 error code ELIFECYCLE
+56 verbose exit [ 1, true ]

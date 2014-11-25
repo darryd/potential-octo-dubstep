@@ -55,11 +55,13 @@
                 <div id="canvasDiv" class="col-md-6">
 
 		    <canvas id="canvas" width="10px" height="10px" style="border:1px solid #000000;"></canvas>
+		    <!--
                     <h1 align="center">Canvas</h1>
                     <p>
                         test
-                    </p>
-                </div>
+			</p>
+                    -->
+		  </div>
                 <div class="col-md-3">
                     <h1>Steps</h1>
                     <p>
@@ -83,11 +85,11 @@
 
     var canvas = document.getElementById("canvas");
 
-    var height = window.innerHeight; //$( "#canvasDiv" ).height();
+    var height = window.innerHeight - $( "#canvasDiv" ).position().top - 20; //$( "#canvasDiv" ).height();
     var width = $( "#canvasDiv" ).width();
 
-    canvas.height = height;
-    canvas.width = width;
+    canvas.height = height - 1;
+    canvas.width = width - 1;
 
   }
 

@@ -81,9 +81,13 @@
 
   function resize_canvas() {
 
-    canvas = document.getElementById("canvas");
-    canvas.height = $( "#canvasDiv" ).height();
-    canvas.width = $( "#canvasDiv" ).width();
+    var canvas = document.getElementById("canvas");
+
+    var height = window.innerHeight; //$( "#canvasDiv" ).height();
+    var width = $( "#canvasDiv" ).width();
+
+    canvas.height = height;
+    canvas.width = width;
 
   }
 

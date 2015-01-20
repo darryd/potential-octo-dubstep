@@ -68,6 +68,22 @@ function node_new (x, y, id, graph) {
   }
 
   /*---------------------------------------------------------------------------------------------------------------------*/
+  node.get_opposite_nodes = function () {
+
+    var nodes = [];
+
+    for (var key_node in this.edges) {
+      if (this.edges.hasOwnProperty(key_node)) {
+
+	var edge = this.edges[key_node];
+	var opposite_node = edge.nodes[key_node].node;
+
+	nodes.push(opposite_node);
+      }
+    }
+    return nodes;
+  }
+  /*---------------------------------------------------------------------------------------------------------------------*/
 
   return node;
 }

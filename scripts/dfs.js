@@ -1,10 +1,12 @@
 
 /*----------------------------------------------------------------------------------------------------------------------------------*/
-
 function _dfs (graph, node) {
 
     var neighbours = node.get_opposite_nodes();
     node.dfs_discovered = true;
+
+    console.log("_dfs");
+    console.log(node.id);
 
     for (var i=0; i < neighbours.length; i++) 
       if (!neighbours[i].dfs_discovered)

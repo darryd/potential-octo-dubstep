@@ -1,0 +1,72 @@
+
+<script src="scripts/graphics.js"></script>
+<script src="scripts/arrow_heads.js"></script>
+<script src="scripts/edge.js"></script>
+<script src="scripts/graph.js"></script>
+<script src="scripts/node.js"></script>
+<script src="scripts/deepCopy.js"></script>
+<script src="scripts/line_to_points.js"></script>
+<script src="scripts/dfs.js"></script>
+<script src="scripts/timer.js"></script>
+
+<canvas id="demo_canvas" width="2000" height="1000"></canvas>
+<div id="talk" style="position:fixed;top: 10; left: 100">
+  <h2> Hello, first we'll draw some nodes. </h2>
+</div>
+
+<script> 
+
+  function talk(str) {
+    var e = document.getElementById("talk").innerHTML = str;
+  }
+
+
+  function add_new_node(param) {
+
+    param.graph.new_node(param.x, param.y, param.id);
+    param.graph.draw();
+  }
+
+  function add_edge(param) {
+
+
+    n1 = param.graph.nodes[param.i1];
+    n2 = param.graph.nodes[param.i2];
+
+    n1.add_edge(n2, 1);
+    param.graph.draw();
+
+  }
+  function do_nothing() {}
+
+  function init_graph() { 
+
+    graph = graph_new(document.getElementById("demo_canvas"));
+    
+    var timer = timer_new(500);
+
+    timer.add_event(add_new_node, {graph: graph, x: 100, y: 400, id: 1});
+    timer.add_event(add_new_node, {graph: graph, x: 200, y: 300, id: 2});
+    timer.add_event(add_new_node, {graph: graph, x: 300, y: 200, id: 3});
+    timer.add_event(add_new_node, {graph: graph, x: 400, y: 300, id: 4});
+    timer.add_event(add_new_node, {graph: graph, x: 500, y: 400, id: 5});
+
+    timer.add_event(talk, "<h2> Now, we add edges </h2>");
+
+    timer.add_event(add_edge, {graph: graph, i1: 0, i2:1});
+    timer.add_event(add_edge, {graph: graph, i1: 1, i2:2});
+    timer.add_event(add_edge, {graph: graph, i1: 2, i2:3});
+    timer.add_event(add_edge, {graph: graph, i1: 3, i2:4});
+    timer.run();
+
+    timer.add_event(talk, "<h2> to be continued....<h2>");
+    timer.add_event(do_nothing);
+    timer.add_event(talk, "<h2>Thank you for watching.</h2>");
+
+  }
+
+  init_graph();
+
+</script>
+
+

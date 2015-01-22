@@ -13,6 +13,7 @@ function timer_new(interval) {
  
   timer.run = function () {
 
+    // Passing the third parameter to setInterval function is not supported in IE9 or earlier.
     this.timer_id = setInterval(this.next, this.interval, this.events);
 
   }
